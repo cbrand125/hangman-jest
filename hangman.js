@@ -5,7 +5,7 @@ const {
   stringify,
   askForALetter,
   wordIncludesLetter,
-  fillInGuessedLetters,
+  fillInGuessedLetters
 } = require('./lib');
 
 /**
