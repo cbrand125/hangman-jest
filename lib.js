@@ -23,7 +23,10 @@ function randomlySelectWord(words) {
  * @param {number} length length of target word
  * @returns {string[]}
  */
-function createBlankWordArray(length) {
+function createBlankWordArray(length = 0) {
+  if (typeof length !== 'number') {
+    return [];
+  }
   return new Array(length).fill('_');
 }
 
@@ -75,6 +78,12 @@ function print(output) {
   console.log(output);
 }
 
+function validateInput(input) {
+  if (typeof input !== 'string' || input[0].search(/[A-Z]/i) === -1)
+    throw Error('Invalid input');
+  return input[0];
+}
+
 module.exports = {
   isWordSolved,
   randomlySelectWord,
@@ -84,4 +93,5 @@ module.exports = {
   stringify,
   askForALetter,
   wordIncludesLetter,
+  validateInput
 };

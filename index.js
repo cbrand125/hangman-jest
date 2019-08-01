@@ -1,5 +1,5 @@
 const { randomlySelectWord } = require('./lib');
-const playHangman = require('./hangman');
+const { playHangman } = require('./hangman');
 
 const wordBank = [
   'javascript',
@@ -7,7 +7,7 @@ const wordBank = [
   'talentpath',
   'puppy',
   'react',
-  'computer',
+  'computer'
 ];
 
 playHangman(randomlySelectWord(wordBank));
